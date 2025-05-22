@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xparibet uz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="top-banner">
+    <img src="banner.jpg" alt="Xparibet banneri" />
+  </div>
+
+  <header>
+    <h1>Xparibet uz</h1>
+    <nav>
+      <a href="#">Bosh sahifa</a>
+      <a href="#">Tikish</a>
+      <a href="#">Profil</a>
+      <div class="auth-links">
+        <a onclick="window.location.href='https://xp-aff.com/L?tag=d_4009835m_64821c_site&site=4009835&ad=64821&r=registration';" style="cursor:pointer;">Kirish</a>
+        <a onclick="window.location.href='https://xp-aff.com/L?tag=d_4009835m_64821c_site&site=4009835&ad=64821&r=registration';" style="cursor:pointer;">Ro‘yxatdan o‘tish</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="games">
+      <h2>Bugungi o‘yinlar</h2>
+      <div class="game">
+        <p>Real Madrid vs Barcelona</p>
+        <button onclick="placeBet('Real Madrid', 2.5)">Real Madrid (2.5)</button>
+        <button onclick="placeBet('Barcelona', 3.1)">Barcelona (3.1)</button>
+      </div>
+      <div class="game">
+        <p>Arsenal vs Chelsea</p>
+        <button onclick="placeBet('Arsenal', 2.2)">Arsenal (2.2)</button>
+        <button onclick="placeBet('Chelsea', 3.4)">Chelsea (3.4)</button>
+      </div>
+    </section>
+
+    <div class="apk-download">
+      <a href="https://xp-aff.com/L?tag=d_4009835m_71587c_apk1&site=4009835&ad=71587" target="_blank" style="cursor:pointer;">📥 APK yuklab olish</a>
+    </div>
+
+    <section class="balance">
+      <h3>Balans: <span id="balance">10000</span> so‘m</h3>
+    </section>
+
+    <section class="profile">
+      <h2>Profilim</h2>
+      <img src="avatar.png" alt="Foydalanuvchi rasmi" class="profile-img" />
+      <p>Ism: Demo Foydalanuvchi</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Xparibet uz. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <script>
+    function placeBet(team, coef) {
+      let balanceSpan = document.getElementById('balance');
+      let balance = parseFloat(balanceSpan.textContent);
+      let betAmount = 1000; // Misol uchun 1000 so'm tikamiz
+
+      if (balance >= betAmount) {
+        balance -= betAmount;
+        alert(`Siz ${team} ga ${betAmount} so‘m tikdingiz. Ko‘paytma: ${coef}`);
+      } else {
+        alert('Balansda yetarli mablag‘ yo‘q!');
+      }
+
+      balanceSpan.textContent = balance.toFixed(0);
+    }
+  </script>
+
+</body>
+</html>
